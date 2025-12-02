@@ -119,18 +119,49 @@ h2 {
     box-shadow: 3px 3px 10px chartreuse;
 }
 
-/* ----- SOCIAL MEDIA ----- */
+/* ----- CONTENEUR SOCIAL MEDIA ----- */
 .social-media {
     display: flex;
     justify-content: center;
     gap: 30px;
+    padding: 20px 0;
 }
 
-.social-media svg {
-    width: 40px;
-    height: 40px;
+/* ----- LIENS DES ICÔNES ----- */
+.social-media a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
     cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    background-color: transparent; /* Pas de fond CSS, le cercle vient du SVG */
 }
+
+/* Effet au survol */
+.social-media a:hover {
+    transform: scale(1.15);
+    background-color: rgba(255, 255, 255, 0.1); /* léger halo */
+}
+
+/* ----- TAILLE SVG ----- */
+.social-media svg {
+    width: 45px;
+    height: 45px;
+}
+
+/* ----- RENFORCER LA VISIBILITÉ DES LOGOS ----- */
+.social-media svg path {
+    fill: white(255, 255, 255) !important; /* logos bien blancs */
+    filter: drop-shadow(0 0 1.5px rgba(0,0,0,0.7)); /* ombre légère */
+    shape-rendering: crispEdges;
+}
+
+
+
+
 
 /* ----- FOOTER ----- */
 .footer {
@@ -156,6 +187,114 @@ h2 {
         padding: 8px 16px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
