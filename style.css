@@ -1,6 +1,7 @@
 /* ----- VARIABLES ----- */
 :root {
     --main-font: 'June in rock';
+    --main-color:white;
 }
 
 /* ----- FONT ----- */
@@ -8,6 +9,13 @@
     font-family: 'June in rock';
     src: url(./June\ in\ Rock\ -\ Personal\ Use.otf);
 }
+
+/* ----- APPLY VARIABLE ----- */
+body {
+    font-family: var(--main-font);
+    
+}
+
 
 /* ----- RESET GLOBAL ----- */
 *,
@@ -37,13 +45,13 @@ header {
     align-items: center;
 }
 
-.header_left {
+.header_aside {
     display: flex;
     align-items: center;
     gap: 14px;
 }
 
-.header_primary_btn svg {
+.header_burger_btn svg {
     cursor: pointer;
 }
 
@@ -87,27 +95,28 @@ main {
 
 h1 {
     font-size: 40px;
-    color: white;
-    border: 2px solid white;
+    color:var(--main-color);
+    border: 0.5px solid white;
     border-radius: 10px;
     padding: 10px 20px;
     margin-bottom: 15px;
-}
+}   
 
 h2 {
     font-size: 22px;
     color: #ddd;
-    border: 2px solid white;
-    border-radius: 10px;
+    /* border: 2px solid white;
+    border-radius: 10px; */
     padding: 8px 16px;
     margin-bottom: 20px;
+    box-shadow:3px 3px 40px chartreuse;
 }
 
-.main_buttons {
+.card {
     margin-bottom: 25px;
 }
 
-.main_buttons button {
+.card button {
     margin: 10px;
     padding: 10px 22px;
     background-color: darkblue;
@@ -120,7 +129,7 @@ h2 {
 }
 
 /* ----- CONTENEUR SOCIAL MEDIA ----- */
-.social-media {
+.social-links-container {
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -128,13 +137,13 @@ h2 {
 }
 
 /* ----- LIENS DES ICÔNES ----- */
-.social-media a {
+.social-links-container a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
+    width: 40px; 
+    height: 40px;
+    border-radius: 20%;
     cursor: pointer;
     transition: transform 0.2s ease, background-color 0.3s ease;
     background-color: transparent; /* Pas de fond CSS, le cercle vient du SVG */
@@ -154,14 +163,10 @@ h2 {
 
 /* ----- RENFORCER LA VISIBILITÉ DES LOGOS ----- */
 .social-media svg path {
-    fill: white(255, 255, 255) !important; /* logos bien blancs */
+    fill: white(71, 44, 225) !important; /* ⬅️ CORRIGÉ */
     filter: drop-shadow(0 0 1.5px rgba(0,0,0,0.7)); /* ombre légère */
     shape-rendering: crispEdges;
 }
-
-
-
-
 
 /* ----- FOOTER ----- */
 .footer {
@@ -187,114 +192,61 @@ h2 {
         padding: 8px 16px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ===== HEADER FADE IN ===== */
+header {
+    animation: fadeDown 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+@keyframes fadeDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== BURGER ANIMATION ===== */
+.header_primary_btn {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.header_primary_btn:hover {
+    transform: scale(1.1);
+}
+
+.burger-line {
+    transition: 0.3s ease;
+}
+
+/* ===== MENU SLIDE ===== */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100vh;
+    background: #0A1A2F;
+    padding: 40px 20px;
+    transition: left 0.4s ease;
+    z-index: 50;
+}
+.side-menu.open {
+    left: 0;
+}
+
+/* ===== BUTTON HOVER ===== */
+button {
+    transition: 0.25s ease;
+}
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* ===== SMOOTH SCROLL ===== */
+html {
+    scroll-behavior: smooth;
+}
 
 
 
